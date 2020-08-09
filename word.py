@@ -9,11 +9,17 @@ ABC1=Frame(ABC,bd=20)
 ABC1.grid()
 a=1
 
-btn=Button(ABC,text='check').grid(row=1,column=2)
+btn2=Label(ABC,text='"...Find The Word..."',bg='black',fg='white',font=("arial",19,"bold")).grid(row=0,column=2)
 
-btn2=Label(ABC,text='"...Find The Word..."',bg='black',fg='white').grid(row=0,column=2)
+label=Label(ABC,text='hai',bg='black',fg'green',font=("arial",13,'bold')).grid(row=1,column=2)
 
-btn2=Label(ABC,text='hai',bg='black',fg='white').grid(row=0,column=3)
+btn=Entry(ABC,text='check').grid(row=2,column=2)
+
+btn=Button(ABC,text='check').grid(row=3,column=2)
+
+
+
+#btn2=Label(ABC,bg='black',fg='white').grid(row=0,column=3)
 
 
 
