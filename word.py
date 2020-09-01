@@ -12,8 +12,10 @@ class Test():
 		self.ans=tk.StringVar()
 		
 		
-		self.list=("FO_R",'BO_K','MOB_LE')
+		self.list=["FO_R",'BO_K','MOB_LE']
+		self.answer=['FOUR','BOOK','MOBILE']
 		self.qus=self.list[random.randint(0,2)]
+		self.list.remove(self.qus)
 		self.text.set(self.qus)
 		self.ABC=tk.Frame(self.root,bg='#000000',bd=20,)
 		self.ABC.pack()
@@ -32,10 +34,16 @@ class Test():
 	def change(self):
 		a=self.ans.get()
 		a=a.upper()
-		if a in self.list:
-			self.text.set('wow')
-		else :
+		if a=='':
+			self.text.set('Try again')
+			self.ans.set('')
+		elif a in self.answer:
+			self.text.set('wow correct')
+			self.ans.set('')
+			
+		elif a not in self.answer:
 			self.text.set('bad move')
+			self.ans.set('')
 		
 		
 app=Test()
