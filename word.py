@@ -1,26 +1,32 @@
-from tkinter import *
-root=Tk()
-#root.geometry('2000x800')
-
-ABC=Frame(root,bg='#000000',bd=20,relief=RIDGE)
-ABC.grid()
-
-ABC1=Frame(ABC,bd=20)
-ABC1.grid()
-a=1
-
-btn2=Label(ABC,text='"...Find The Word..."',bg='black',fg='white',font=("arial",19,"bold")).grid(row=0,column=2)
-
-label=Label(ABC,text='hai',bg='black',fg'green',font=("arial",13,'bold')).grid(row=1,column=2)
-
-btn=Entry(ABC,text='check').grid(row=2,column=2)
-
-btn=Button(ABC,text='check').grid(row=3,column=2)
+import tkinter as tk
+global list 
 
 
 
-#btn2=Label(ABC,bg='black',fg='white').grid(row=0,column=3)
 
-
-
-root.mainloop()
+class Test():
+	def __init__(self):
+		self.root = tk.Tk()
+		self.text = tk.StringVar()
+		self.text.set("Test")
+		list=["hai","hello"]
+		
+		self.ABC=tk.Frame(self.root,bg='#000000',bd=20,)
+		self.ABC.pack()
+		
+		self.ABC1=tk.Frame(self.ABC,bd=20)
+		self.ABC1.pack()
+		
+		self.btn2=tk.Label(self.ABC,text='"...Find The Word..."',bg='black',fg='white',font=("arial",19,"bold")).pack()
+		
+		self.label=tk.Label(self.ABC,bg='black',textvariable=self.text,fg='green',font=("arial",13,'bold')).pack()
+		
+		self.btn=tk.Entry(self.ABC,).pack()
+		
+		self.btn3=tk.Button(self.ABC,text='check',command=self.change).pack()
+		self.root.mainloop()
+	def change(self):
+		self.text.set("hai")
+		
+		
+app=Test()
